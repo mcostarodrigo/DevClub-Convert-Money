@@ -3,6 +3,7 @@ const select = document.getElementById("currency-select")
 
 const dolar = 5.2
 const euro = 5.9
+const bit = 0.000011
 
 const convertValues = () => {
     const inputReais = document.getElementById('input-real').value /*Trás apenas o valor*/
@@ -26,17 +27,22 @@ const convertValues = () => {
 
     }
 
-if(select.value === "€ Euro") {
-    currencyValueText.innerHTML = new Intl.NumberFormat('de-DE',
-        {
-            style: 'currency',
-            currency: 'EUR'
-        }
-    ).format(inputReais / euro)
+    if (select.value === "€ Euro") {
+        currencyValueText.innerHTML = new Intl.NumberFormat('de-DE',
+            {
+                style: 'currency',
+                currency: 'EUR'
+            }
+        ).format(inputReais / euro)
+    }
 
+
+    if (select.value === "Bitcoin") {
+        currencyValueText.innerHTML = (inputReais * bit)
+
+    }
 }
 
-}
 
 changeCurrency = () => {
     const currencyimg = document.getElementById("currency-img")
@@ -51,6 +57,13 @@ changeCurrency = () => {
         currencyName.innerHTML = "Euro"
         currencyimg.src = "./assets/Euro.png"
     }
+
+    if (select.value === "Bitcoin") {
+        currencyName.innerHTML = "Bitcoin"
+        currencyimg.src = "./assets/bit.png"
+    }
+
+
     convertValues()
 }
 
