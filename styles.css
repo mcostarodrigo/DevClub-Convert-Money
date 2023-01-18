@@ -9,6 +9,9 @@
 
 body {
     background-color: #e5e5e5;
+    background-image: url(./assets/coin.jpg);
+    background-position: center center; /* centraliza a imagem */
+    background-size: cover; /* ajusta a imagem para cobrir toda a tela */
 }
 
 .container {
@@ -16,7 +19,7 @@ body {
     background-color: #F4F4F4;
     margin: 0 auto;
     /*Primeiro vai aplaicra margem 0 em cima e em baixo*/
-    margin-top: 100px;
+    margin-top: 35px;
     /*Depois margem 100 em cima*/
 }
 
